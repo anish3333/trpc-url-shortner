@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/Home";
+import RedirectPage from "./pages/RedirectPage";
 
 function App() {
-
   return (
-    <>
-      <p className="text-2xl text-pink-600">Hello this is url shortner</p>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:url" element={<RedirectPage />} />
+      </Routes>
+    </Router>
   );
 }
 
